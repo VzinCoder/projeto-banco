@@ -6,18 +6,16 @@ public class Cliente {
     private int idade;
     private  boolean maiorIdade;
 
-    public Cliente(String nome, int idade, boolean maiorIdade) {
+    public Cliente(String nome, int idade) {
         this.nome = nome;
         this.idade = idade;
-        this.maiorIdade = maiorIdade;
     }
-
    
-    public Cliente(int cod, String nome, int idade, boolean maiorIdade) {
+    public Cliente(int cod, String nome, int idade) {
         this.cod = cod;
         this.nome = nome;
         this.idade = idade;
-        this.maiorIdade = maiorIdade;
+        this.maiorIdade = idade>= 18? true:false;
     }
 
     public int getCod() {
