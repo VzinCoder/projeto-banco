@@ -1,6 +1,6 @@
 package entidade;
 
-public class ContaCorrente extends ContaAbstrata{
+class ContaCorrente extends ContaAbstrata{
     
     public ContaCorrente(int numero, Cliente cliente) {
         super(numero, cliente);
