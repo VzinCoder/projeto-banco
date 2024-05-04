@@ -1,7 +1,6 @@
 package entidade;
 
-import exception.ValorInvalidoDepositoException;
-import exception.ValorInvalidoSaqueException;
+import exception.ValorInvalidoException;
 
 public abstract class ContaAbstrata {
     protected int numero;
@@ -32,20 +31,27 @@ public abstract class ContaAbstrata {
         return cliente;
     }
 
-    public void sacar(double valor) throws ValorInvalidoSaqueException {
+     void sacar(double valor) throws ValorInvalidoException {
         if (valor <= 0 || valor > this.saldo) {
-            throw new ValorInvalidoSaqueException("Valor invalido para Saque!");
+            throw new ValorInvalidoException("Valor invalido para Saque!");
         }
 
         this.saldo -= valor;
     }
 
-    public void depositar(double valor) throws ValorInvalidoDepositoException {
+     void depositar(double valor) throws ValorInvalidoException {
         if (valor <= 0 ) {
-            throw new ValorInvalidoDepositoException("Valor invalido para Deposito!");
+            throw new ValorInvalidoException("Valor invalido para Deposito!");
         }
 
         this.saldo += valor;
     }
+
+    @Override
+    public String toString() {
+        return "ContaAbstrata [numero=" + numero + ", saldo=" + saldo + ", cliente=" + cliente + "]";
+    }
+
+    
 
 }
