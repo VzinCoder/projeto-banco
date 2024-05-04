@@ -13,12 +13,6 @@ public abstract class ContaAbstrata {
         this.saldo = 0;
     }
 
-    public ContaAbstrata(int numero, double saldo, Cliente cliente) {
-        this.numero = numero;
-        this.cliente = cliente;
-        this.saldo = saldo;
-    }
-
     public int getNumero() {
         return numero;
     }

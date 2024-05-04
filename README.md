@@ -1,18 +1,17 @@
-## Getting Started
+# Projeto de Banco  em Java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
-## Folder Structure
+Olá pessoal,
+Estou compartilhando aqui um projeto prático que desenvolvi para reforçar meus conhecimentos em Programação Orientada a Objetos (POO) em Java. Este projeto consiste na implementação de um banco digital.
 
-The workspace contains two folders by default, where:
+## Descrição
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Neste projeto, utilizei os conceitos de POO e Java para criar um banco digital. Explorei o contexto bancário para aplicar os pilares da orientação a objetos e desenvolver minha capacidade de abstração.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Diagrama UML
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
 
-## Dependency Management
+![Banco Digital](diagramaBanco.drawio.png)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
+

@@ -1,20 +1,15 @@
 package entidade;
 
-import java.util.List;
-
 import exception.ContaNaoEncontradaException;
 import exception.NumeroContaException;
 import exception.ValorInvalidoException;
 
 public class BancoBradesco extends BancoAbstrato {
 
-    public BancoBradesco(String nome, String agencia) {
-        super(nome, agencia);
+    public BancoBradesco() {
+        super();
     }
 
-    public BancoBradesco(String nome, String agencia, List<ContaAbstrata> contas) {
-        super(nome, agencia, contas);
-    }
 
     @Override
     public void transferir(ContaAbstrata origem, ContaAbstrata destino, double valor) throws ValorInvalidoException, NumeroContaException,ContaNaoEncontradaException {

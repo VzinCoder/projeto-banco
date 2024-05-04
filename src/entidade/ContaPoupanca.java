@@ -6,7 +6,5 @@ class ContaPoupanca extends ContaAbstrata{
         super(numero, cliente);
     }
     
-    public ContaPoupanca(int numero, double saldo, Cliente cliente) {
-        super(numero,saldo,cliente);
-    }
+
 }

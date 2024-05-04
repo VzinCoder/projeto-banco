@@ -6,8 +6,6 @@ class ContaCorrente extends ContaAbstrata{
         super(numero, cliente);
     }
     
-    public ContaCorrente(int numero, double saldo, Cliente cliente) {
-        super(numero,saldo,cliente);
-    }
+
 
 }

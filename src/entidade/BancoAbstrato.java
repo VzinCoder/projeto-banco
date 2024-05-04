@@ -11,19 +11,9 @@ import exception.NumeroContaException;
 import exception.ValorInvalidoException;
 
 public abstract class BancoAbstrato {
-    protected String nome;
-    protected String agencia;
     protected List<ContaAbstrata> contas;
 
-    public BancoAbstrato(String nome, String agencia, List<ContaAbstrata> contas) {
-        this.nome = nome;
-        this.agencia = agencia;
-        this.contas = contas;
-    }
-
-    public BancoAbstrato(String nome, String agencia) {
-        this.nome = nome;
-        this.agencia = agencia;
+    public BancoAbstrato() {
         this.contas = new ArrayList<>();
     }
 
@@ -33,6 +23,12 @@ public abstract class BancoAbstrato {
         if (!cliente.isMaiorIdade()) {
             throw new ClienteInvalidoException("Cliente menor de idade!");
         }
+
+
+        if(verificarClientePossuiContaTipo(cliente, tipo)){
+            throw new AccountAlreadyExistsException("Usuario já possui uma conta desse tipo");
+        }
+
 
         if (verificarContaExiste(numero, tipo)) {
             throw new AccountAlreadyExistsException("Uma conta com esse numero já existe");
@@ -49,7 +45,14 @@ public abstract class BancoAbstrato {
         return conta;
     }
 
-    protected boolean verificarContaExiste(int numero, TipoConta tipo) {
+    private boolean verificarClientePossuiContaTipo(Cliente cliente, TipoConta tipo) {
+        if (tipo == TipoConta.Poupanca) {
+            return contas.stream().anyMatch(c -> c.getCliente() == cliente && c instanceof ContaPoupanca);
+        }
+        return contas.stream().anyMatch(c -> c.getCliente() == cliente && c instanceof ContaCorrente);
+    }
+
+    private boolean verificarContaExiste(int numero, TipoConta tipo) {
         try {
             buscarConta(numero, tipo);
             return true;
