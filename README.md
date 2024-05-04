@@ -11,7 +11,7 @@ Neste projeto, utilizei os conceitos de POO e Java para criar um banco digital. 
 ## Diagrama UML
 
 
-![Banco Digital](diagramaBanco.drawio.png)
+![Banco Digital](diagramaBanco.png)
 
 
 
