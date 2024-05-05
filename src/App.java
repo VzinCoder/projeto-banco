@@ -230,12 +230,6 @@ public class App {
             throws ClienteInvalidoException, AccountAlreadyExistsException, Exception {
         System.out.print("Digite o codigo do cliente: ");
         int cod = scan.nextInt();
-        System.out.print("Digite o nome do cliente: ");
-        String nome = scan.next();
-        System.out.print("Digite a idade do cliente: ");
-        int age = scan.nextInt();
-        System.out.print("Digite o numero da Conta: ");
-        int numero = scan.nextInt();
 
         Cliente cliente = null;
         for (Cliente c : clientes) {
@@ -245,11 +239,18 @@ public class App {
             }
         }
 
+       
         if (cliente == null) {
+            System.out.print("Digite o nome do cliente: ");
+            String nome = scan.next();
+            System.out.print("Digite a idade do cliente: ");
+            int age = scan.nextInt();
             cliente = new Cliente(cod, nome, age);
             clientes.add(cliente);
         }
 
+        System.out.print("Digite o numero da Conta: ");
+        int  numero = scan.nextInt();
         getBanco(nomeBanco).criarConta(cliente, tipo, numero);
     }
 
@@ -303,15 +304,15 @@ public class App {
 
     public static void transferir(String nomeBancoOrigem, String nomeBancoDestino, TipoConta tipoDestino)
             throws ContaNaoEncontradaException, ContasEmptyException, ValorInvalidoException, Exception {
-        
-        int op; 
+
+        int op;
 
         TipoConta tipoOrigem = null;
         do {
             System.out.println("Qual o tipo da sua Conta?");
-        System.out.println("1- Conta Poupanca");
-        System.out.println("2- Conta Corrente");
-        System.out.println("3- Cancelar");
+            System.out.println("1- Conta Poupanca");
+            System.out.println("2- Conta Corrente");
+            System.out.println("3- Cancelar");
             op = scan.nextInt();
             switch (op) {
                 case 1:
