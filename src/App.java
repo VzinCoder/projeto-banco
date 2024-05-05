@@ -303,14 +303,16 @@ public class App {
 
     public static void transferir(String nomeBancoOrigem, String nomeBancoDestino, TipoConta tipoDestino)
             throws ContaNaoEncontradaException, ContasEmptyException, ValorInvalidoException, Exception {
-        System.out.println("Qual o tipo da sua Conta?");
-        System.out.println("1- Conta Poupanca");
-        System.out.println("2- Conta Corrente");
-        System.out.println("3- Cancelar");
-        int op = scan.nextInt();
+        
+        int op; 
 
         TipoConta tipoOrigem = null;
         do {
+            System.out.println("Qual o tipo da sua Conta?");
+        System.out.println("1- Conta Poupanca");
+        System.out.println("2- Conta Corrente");
+        System.out.println("3- Cancelar");
+            op = scan.nextInt();
             switch (op) {
                 case 1:
                     tipoOrigem = TipoConta.Poupanca;
